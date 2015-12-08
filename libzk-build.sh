@@ -7,7 +7,7 @@ PLATFORM=`uname`
 ZK_VERSION=3.4.6
 ZK=zookeeper-$ZK_VERSION
 ZK_FILE=/$BUILD_TMP/$ZK.tar.gz
-ZK_URL=http://apache.mirrors.tds.net/zookeeper/$ZK/$ZK.tar.gz
+ZK_URL=http://jenkins.fasterize.com/warp/$ZK.tar.gz
 APACHE_DYN_FILE=/$BUILD_TMP/index.html
 APACHE_DYN_URL=http://www.apache.org/dyn/closer.cgi/zookeeper/
 
@@ -34,7 +34,7 @@ download_source() {
             return 1
         fi
     fi
-    
+
     # Check that the file is not corrupted
     tar -ztf $ZK_FILE > /dev/null
 }
@@ -46,7 +46,7 @@ if [ "$PLATFORM" != "SunOS" ]; then
     fi
 
     mkdir -p $BUILD_TMP
-    
+
     RETRIES=5
     while [ $RETRIES -gt 0 ]
     do
