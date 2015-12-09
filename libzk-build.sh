@@ -48,9 +48,9 @@ if [ "$PLATFORM" != "SunOS" ]; then
 
     tar -zxf $ZK_FILE
 
-    PATCH_URL=https://issues.apache.org/jira/secure/attachment/12673210/ZOOKEEPER-2049.noprefix.branch-3.4.patch
+    PATCH_URL=http://jenkins.fasterize.com/warp/ZOOKEEPER-2049.noprefix.branch-3.4.patch
     PATCH_FILE=/$BUILD_TMP/branch-3.4.patch
-    echo "Downloading yosemite patch"
+    echo "Downloading yosemite patch from $PATCH_URL"
     curl --silent --output $PATCH_FILE $PATCH_URL || wget $PATCH_URL -O $PATCH_FILE
     if [ $? != 0 ] ; then
         echo "Unable to download yosemite patch"
