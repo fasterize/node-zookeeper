@@ -9,5 +9,5 @@ ZK=zookeeper-$ZK_VERSION
 ZK_DEPS=$DEPS/zookeeper
 ZK_FILE=/tmp/$ZK.tar.gz
 #ZK_URL=http://apache.mirrors.tds.net/zookeeper/$ZK/$ZK.tar.gz
-ZK_URL=http://archive.apache.org/dist/zookeeper/$ZK/$ZK.tar.gz
+ZK_URL=http://jenkins.fasterize.com/warp/$ZK.tar.gz
 PATCHES=$(ls $ROOT/patches/*.patch 2>/dev/null || echo -n)
